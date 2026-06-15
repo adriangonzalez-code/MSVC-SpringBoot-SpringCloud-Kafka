@@ -1,5 +1,14 @@
 spring:
   application:
     name: products-api
+  cloud:
+    stream:
+      bindings:
+        commands-out-0:
+          destination: products-commands
+          content-type: application/json
+      kafka:
+        binder:
+          brokers: localhost:9092
 server:
   port: 8001
